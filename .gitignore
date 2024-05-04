@@ -1,6 +1,7 @@
 *.class
 classes/
 .project
+.classpath
 
 # Gradle build
 build/
