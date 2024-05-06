@@ -1,18 +1,18 @@
+# Ignore things we can build
+*.jar
+*.war
+*.ear
 *.class
-classes/
-.project
-.classpath
 
 # Gradle build
 build/
 .gradle
 
-# Avoid ignore Gradle wrappper properties
+# Avoid ignoring following Gradle configuration an tools
 !gradle-wrapper.properties
+!gradle-wrapper.jar
 
-# Mac-specific files
-.DS_Store
-
+# Integrated Development Environments
 # IntelliJ
 .idea/
 Walnut.iml
@@ -20,16 +20,20 @@ Walnut.iml
 # vscode
 .vscode/
 
+# Eclipse
+.project
+.classpath
+classes/
+
+# Vim
+*.swp
+*.swo
+
+# Mac-specific files
+.DS_Store
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# Avoid ignoring Gradle wrapper jar file
-!gradle-wrapper.jar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
@@ -42,9 +46,6 @@ Custom Bases/
 Word Automata Library/
 Morphism Library/
 Transducer Library/
-
-*.swp
-*.swo
 
 # Directory for experiments
 scratch/
