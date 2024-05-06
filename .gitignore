@@ -3,6 +3,7 @@
 *.war
 *.ear
 *.class
+walnut.zip
 
 # Gradle build
 build/

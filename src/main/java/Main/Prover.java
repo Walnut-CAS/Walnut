@@ -1653,19 +1653,6 @@ public class Prover {
 				HelpRepository repository = DefaultRepositoryWrapper.wrap(new CacheRepositoryWrapper(new ResourceRepository()));
 				String helpMessage = repository.helpForCommand(commandName);
 				System.out.println(helpMessage);
-				// help with a specific command.
-				int index = pathnames.indexOf(commandName + ".txt");
-				if (index == -1) {
-					System.out.println("There is no documentation for \"" + commandName + "\". Type \"help;\" to list all commands.");
-				}
-				else {
-					try (BufferedReader br = new BufferedReader(new FileReader(UtilityMethods.get_address_for_help_commands() + commandName + ".txt"))) {
-						String line;
-						while ((line = br.readLine()) != null) {
-							System.out.println(line);
-						}
-					}
-				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
