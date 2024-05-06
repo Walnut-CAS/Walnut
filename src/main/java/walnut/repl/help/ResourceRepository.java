@@ -4,7 +4,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-class ResourceRepository implements HelpRepository {
+/**
+ * A {@code HelpRepository} that reads the help messages as resource from {@code "/help/<COMMAND_NAME>.txt"}.
+ */
+public class ResourceRepository implements HelpRepository {
 
     @Override
     public String helpForCommand(String commandName) {

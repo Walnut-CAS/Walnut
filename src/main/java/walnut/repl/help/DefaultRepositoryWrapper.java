@@ -8,7 +8,7 @@ import java.nio.charset.StandardCharsets;
  * A {@code HelpRepository} wrapper that provides a default help message when the delegate does not provide
  * a help message.
  */
-class DefaultRepositoryWrapper implements HelpRepository {
+public class DefaultRepositoryWrapper implements HelpRepository {
     private static final String DEFAULT_MESSAGE_LOCATION = "/help/default-help-message.txt";
     private static final String BACKUP_MESSAGE = "[TODO] place a help message at DEFAULT_MESSAGE_LOCATION";
 
@@ -32,11 +32,11 @@ class DefaultRepositoryWrapper implements HelpRepository {
         return new DefaultRepositoryWrapper(defaultHelpMessage, delegate);
     }
 
-    private final String defaultHelpMessage;
+    private final String defaultHelpMessageFormat;
     private final HelpRepository delegate;
 
-    public DefaultRepositoryWrapper(String defaultHelpMessage, HelpRepository delegate) {
-        this.defaultHelpMessage = defaultHelpMessage;
+    public DefaultRepositoryWrapper(String defaultHelpMessageFormat, HelpRepository delegate) {
+        this.defaultHelpMessageFormat = defaultHelpMessageFormat;
         this.delegate = delegate;
     }
 
@@ -44,6 +44,6 @@ class DefaultRepositoryWrapper implements HelpRepository {
     @Override
     public String helpForCommand(String commandName) {
         String helpMessage = delegate.helpForCommand(commandName);
-        return (helpMessage != null ? helpMessage : defaultHelpMessage);
+        return (helpMessage != null ? helpMessage : String.format(defaultHelpMessageFormat, commandName));
     }
 }

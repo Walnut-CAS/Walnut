@@ -11,14 +11,14 @@ public class DefaultRepositoryWrapperTest {
     private static final String KNOWN_COMMAND = "known command";
     private static final String KNOWN_HELP_MESSAGE = "known help message";
     private static final String UNKNOWN_COMMAND = "unknown command";
-    private static final String DEFAULT_HELP_MESSAGE = "default help message";
+    private static final String DEFAULT_HELP_MESSAGE_FORMAT = "default help message for %s";
     private HelpRepository delegate;
     private HelpRepository repository;
 
     @BeforeEach
     public void createHelpRepositoryMock() {
         delegate = mock(HelpRepository.class);
-        repository = new DefaultRepositoryWrapper(DEFAULT_HELP_MESSAGE, delegate);
+        repository = new DefaultRepositoryWrapper(DEFAULT_HELP_MESSAGE_FORMAT, delegate);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class DefaultRepositoryWrapperTest {
 
         String actual = repository.helpForCommand(UNKNOWN_COMMAND);
 
-        Assertions.assertEquals(DEFAULT_HELP_MESSAGE, actual);
+        Assertions.assertEquals(String.format(DEFAULT_HELP_MESSAGE_FORMAT, UNKNOWN_COMMAND), actual);
     }
 }
 

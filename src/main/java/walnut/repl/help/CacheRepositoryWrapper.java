@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * A {@code HelpRepository} wrapper that caches help messages it already knows about.
  */
-class CacheRepositoryWrapper implements HelpRepository {
+public class CacheRepositoryWrapper implements HelpRepository {
     private final HelpRepository delegate;
     private final HashMap<String, String> cache;
 
