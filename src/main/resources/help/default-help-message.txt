@@ -1,0 +1,1 @@
+There is no documentation for "%s". Type "help;" to list all commands.

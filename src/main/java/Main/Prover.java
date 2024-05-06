@@ -42,6 +42,10 @@ import Automata.OstrowskiNumeration;
 import Automata.Transducer;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import walnut.repl.help.CacheRepositoryWrapper;
+import walnut.repl.help.DefaultRepositoryWrapper;
+import walnut.repl.help.HelpRepository;
+import walnut.repl.help.ResourceRepository;
 
 /**
  * This class contains the main method. It is responsible to get a command from user
@@ -1646,6 +1650,9 @@ public class Prover {
 				}
 			}
 			else {
+				HelpRepository repository = DefaultRepositoryWrapper.wrap(new CacheRepositoryWrapper(new ResourceRepository()));
+				String helpMessage = repository.helpForCommand(commandName);
+				System.out.println(helpMessage);
 				// help with a specific command.
 				int index = pathnames.indexOf(commandName + ".txt");
 				if (index == -1) {
