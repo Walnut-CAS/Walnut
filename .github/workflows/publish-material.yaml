@@ -22,8 +22,6 @@ jobs:
       - name: Package Walnut
         run:  zip -r walnut.zip walnut.sh build/libs/Walnut-all.jar Automata\ Library/ Result/ Command\ Files/ Macro\ Library/ Word\ Automata\ Library/ Custom\ Bases/ Morphism\ Library/ Help\ Documentation/ Transducer\ Library/
       - name: Create release
-        uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          automatic_release_tag: latest
-          files: walnut.zip
+        run: gh release create latest walnut.zip
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
