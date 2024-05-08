@@ -3,6 +3,7 @@ package walnut.repl.help;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import walnut.repl.HelpRepository;
 
 public class ResourceRepositoryTest {
     private static final String KNOWN_COMMAND = "known-command";

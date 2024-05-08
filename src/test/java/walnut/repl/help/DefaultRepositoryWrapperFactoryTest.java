@@ -3,6 +3,7 @@ package walnut.repl.help;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import walnut.repl.HelpRepository;
 
 import static org.mockito.Mockito.mock;
 

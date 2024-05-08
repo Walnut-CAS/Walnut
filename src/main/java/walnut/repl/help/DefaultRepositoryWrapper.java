@@ -1,5 +1,7 @@
 package walnut.repl.help;
 
+import walnut.repl.HelpRepository;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;

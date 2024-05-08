@@ -1,5 +1,7 @@
 package walnut.repl.help;
 
+import walnut.repl.HelpRepository;
+
 import java.util.HashMap;
 
 /**

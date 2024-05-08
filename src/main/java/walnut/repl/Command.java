@@ -9,4 +9,6 @@ public interface Command {
                .seq(CharacterParser.of(';').trim())
                .pick(0);
     }
+
+    void execute(ReplContext context);
 }

@@ -25,10 +25,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.LinkedList;
@@ -44,7 +42,7 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import walnut.repl.help.CacheRepositoryWrapper;
 import walnut.repl.help.DefaultRepositoryWrapper;
-import walnut.repl.help.HelpRepository;
+import walnut.repl.HelpRepository;
 import walnut.repl.help.ResourceRepository;
 
 /**

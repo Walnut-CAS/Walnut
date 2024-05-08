@@ -5,6 +5,7 @@ import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import walnut.repl.HelpRepository;
 
 public class CacheRepositoryWrapperTest {
     private static final String UNKNOWN_COMMAND = "unknown command";

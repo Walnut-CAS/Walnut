@@ -1,4 +1,4 @@
-package walnut.repl.help;
+package walnut.repl;
 
 /**
  * A repository for help messages.
