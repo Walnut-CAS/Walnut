@@ -6,8 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import walnut.repl.Command;
-import walnut.repl.command.Cls;
-import walnut.repl.command.Help;
+import walnut.repl.command.*;
 
 import java.util.stream.Stream;
 
@@ -48,7 +47,9 @@ public class ReplParserTest {
                 Arguments.of(" cls;", new Cls()),
                 Arguments.of("cls ;", new Cls()),
                 Arguments.of("cls; ", new Cls()),
-                Arguments.of(" cls ;  ", new Cls())
+                Arguments.of(" cls ;  ", new Cls()),
+                Arguments.of("draw AUT;", new Draw("AUT")),
+                Arguments.of("draw $aut;", new Draw("$aut"))
         );
     }
 
@@ -56,7 +57,9 @@ public class ReplParserTest {
         return Stream.of(
                 Arguments.of("help"),
                 Arguments.of("hlp;"),
-                Arguments.of("clr;")
+                Arguments.of("clr;"),
+                Arguments.of("draw;"),
+                Arguments.of("drw AUT;")
         );
     }
 }

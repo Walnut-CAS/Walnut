@@ -25,6 +25,7 @@ public class ReplParser {
 
     private Parser replParser() {
         return Help.parser()
-                .or(Cls.parser());
+                .or(Cls.parser())
+                .or(Draw.parser());
     }
 }

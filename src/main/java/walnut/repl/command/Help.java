@@ -16,6 +16,7 @@ public record Help(String commandName) implements Command {
     @Override
     public void execute(ReplContext context) {
         if (commandName.equals("help")) {
+            // TOOD
 
         } else {
             String message = context.helpForCommand(commandName);
